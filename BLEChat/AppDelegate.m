@@ -42,4 +42,20 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (CBCentralManager*) centralManager
+{
+    if (!_centralManager) {
+        _centralManager = [[CBCentralManager alloc] initWithDelegate:nil queue:nil];
+    }
+    return _centralManager;
+}
+
+- (NSMutableArray*) remoteDevices
+{
+    if (!_remoteDevices) {
+        _remoteDevices = [NSMutableArray array];
+    }
+    return _remoteDevices;
+}
+
 @end

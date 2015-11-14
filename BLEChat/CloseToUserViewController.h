@@ -1,5 +1,5 @@
 //
-//  NearbyViewController.h
+//  CloseToUserViewController.h
 //  BLEChat
 //
 //  Created by Eleven Chen on 15/11/14.
@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ViewController.h"
 
-@interface NearbyViewController : ViewController<CBCentralManagerDelegate>
+@interface CloseToUserViewController : ViewController
 
 @end
