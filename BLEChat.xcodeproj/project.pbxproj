@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		778BAE87E957B3548C5B7EE9 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81F199130BDA0DC14D83E22 /* Pods.framework */; };
 		A54AB3501BF6DE53000E6840 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A54AB34F1BF6DE53000E6840 /* main.m */; };
 		A54AB3531BF6DE53000E6840 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A54AB3521BF6DE53000E6840 /* AppDelegate.m */; };
 		A54AB3561BF6DE53000E6840 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A54AB3551BF6DE53000E6840 /* ViewController.m */; };
@@ -15,6 +16,8 @@
 		A54AB35E1BF6DE53000E6840 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54AB35C1BF6DE53000E6840 /* LaunchScreen.storyboard */; };
 		A54AB3691BF6DE53000E6840 /* BLEChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A54AB3681BF6DE53000E6840 /* BLEChatTests.m */; };
 		A54AB3741BF6DE53000E6840 /* BLEChatUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A54AB3731BF6DE53000E6840 /* BLEChatUITests.m */; };
+		A54AB3831BF6DF99000E6840 /* NearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A54AB3821BF6DF99000E6840 /* NearbyViewController.m */; };
+		A54AB38B1BF6E0C0000E6840 /* PeripheralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A54AB38A1BF6E0C0000E6840 /* PeripheralManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		130FAF6E80A54B411D4B45FC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A54AB34B1BF6DE53000E6840 /* BLEChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLEChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54AB34F1BF6DE53000E6840 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A54AB3511BF6DE53000E6840 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +55,12 @@
 		A54AB36F1BF6DE53000E6840 /* BLEChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLEChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54AB3731BF6DE53000E6840 /* BLEChatUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEChatUITests.m; sourceTree = "<group>"; };
 		A54AB3751BF6DE53000E6840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A54AB3811BF6DF99000E6840 /* NearbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyViewController.h; sourceTree = "<group>"; };
+		A54AB3821BF6DF99000E6840 /* NearbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyViewController.m; sourceTree = "<group>"; };
+		A54AB3891BF6E0C0000E6840 /* PeripheralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeripheralManager.h; sourceTree = "<group>"; };
+		A54AB38A1BF6E0C0000E6840 /* PeripheralManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeripheralManager.m; sourceTree = "<group>"; };
+		B5CA01E94855134E08622EFA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D81F199130BDA0DC14D83E22 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				778BAE87E957B3548C5B7EE9 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +89,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A68426C5F5BE69883C101F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D81F199130BDA0DC14D83E22 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92EBC7049430D996DD612683 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				130FAF6E80A54B411D4B45FC /* Pods.debug.xcconfig */,
+				B5CA01E94855134E08622EFA /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A54AB3421BF6DE53000E6840 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +113,8 @@
 				A54AB3671BF6DE53000E6840 /* BLEChatTests */,
 				A54AB3721BF6DE53000E6840 /* BLEChatUITests */,
 				A54AB34C1BF6DE53000E6840 /* Products */,
+				92EBC7049430D996DD612683 /* Pods */,
+				6A68426C5F5BE69883C101F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +131,8 @@
 		A54AB34D1BF6DE53000E6840 /* BLEChat */ = {
 			isa = PBXGroup;
 			children = (
+				A54AB3851BF6DFCA000E6840 /* PeripheralManager */,
+				A54AB3841BF6DF9D000E6840 /* NearBy */,
 				A54AB3511BF6DE53000E6840 /* AppDelegate.h */,
 				A54AB3521BF6DE53000E6840 /* AppDelegate.m */,
 				A54AB3541BF6DE53000E6840 /* ViewController.h */,
@@ -140,6 +172,24 @@
 			path = BLEChatUITests;
 			sourceTree = "<group>";
 		};
+		A54AB3841BF6DF9D000E6840 /* NearBy */ = {
+			isa = PBXGroup;
+			children = (
+				A54AB3811BF6DF99000E6840 /* NearbyViewController.h */,
+				A54AB3821BF6DF99000E6840 /* NearbyViewController.m */,
+			);
+			name = NearBy;
+			sourceTree = "<group>";
+		};
+		A54AB3851BF6DFCA000E6840 /* PeripheralManager */ = {
+			isa = PBXGroup;
+			children = (
+				A54AB3891BF6E0C0000E6840 /* PeripheralManager.h */,
+				A54AB38A1BF6E0C0000E6840 /* PeripheralManager.m */,
+			);
+			name = PeripheralManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +197,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A54AB3781BF6DE53000E6840 /* Build configuration list for PBXNativeTarget "BLEChat" */;
 			buildPhases = (
+				37111AD92E8CB155E59BD912 /* Check Pods Manifest.lock */,
 				A54AB3471BF6DE53000E6840 /* Sources */,
 				A54AB3481BF6DE53000E6840 /* Frameworks */,
 				A54AB3491BF6DE53000E6840 /* Resources */,
+				51BDAD5557157E7B63B42055 /* Embed Pods Frameworks */,
+				26C94DFD0B0DB475DE94A94C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,13 +318,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		26C94DFD0B0DB475DE94A94C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37111AD92E8CB155E59BD912 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		51BDAD5557157E7B63B42055 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A54AB3471BF6DE53000E6840 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A54AB3561BF6DE53000E6840 /* ViewController.m in Sources */,
+				A54AB3831BF6DF99000E6840 /* NearbyViewController.m in Sources */,
 				A54AB3531BF6DE53000E6840 /* AppDelegate.m in Sources */,
+				A54AB38B1BF6E0C0000E6840 /* PeripheralManager.m in Sources */,
 				A54AB3501BF6DE53000E6840 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +512,7 @@
 		};
 		A54AB3791BF6DE53000E6840 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 130FAF6E80A54B411D4B45FC /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BLEChat/Info.plist;
@@ -420,6 +524,7 @@
 		};
 		A54AB37A1BF6DE53000E6840 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5CA01E94855134E08622EFA /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BLEChat/Info.plist;
@@ -496,6 +601,7 @@
 				A54AB37A1BF6DE53000E6840 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A54AB37B1BF6DE53000E6840 /* Build configuration list for PBXNativeTarget "BLEChatTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +610,7 @@
 				A54AB37D1BF6DE53000E6840 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A54AB37E1BF6DE53000E6840 /* Build configuration list for PBXNativeTarget "BLEChatUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +619,7 @@
 				A54AB3801BF6DE53000E6840 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

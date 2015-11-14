@@ -1,0 +1,10 @@
+PODS:
+  - ECExtension (0.2.2)
+
+DEPENDENCIES:
+  - ECExtension
+
+SPEC CHECKSUMS:
+  ECExtension: 99eb40879e87e0bb1bec382291b87e6deeaffb6c
+
+COCOAPODS: 0.39.0
