@@ -49,6 +49,7 @@
 {
     self.whiteViewDis = 20;
     self.radarWidthRatio = 1.5;
+    self.enableRadar = YES;
     self.whiteView = [[UIView alloc] init];
     self.whiteView.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.whiteView];
@@ -77,6 +78,19 @@
     _image = image;
     self.imageView.image = image;
     [self setNeedsDisplay];
+}
+
+- (void) setEnableRadar:(BOOL)enableRadar
+{
+    if (_enableRadar) {
+        [self stopAnimation];
+    }
+    _enableRadar = enableRadar;
+    if (_enableRadar) {
+        [self startAnimation];
+    } else {
+        [self stopAnimation];
+    }
 }
 
 

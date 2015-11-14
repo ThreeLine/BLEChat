@@ -26,7 +26,7 @@
 
 @property (strong, nonatomic) NSMutableArray* allCards;
 @property (assign, nonatomic) NSInteger lastCardIndex; // 最后卡片的位置
-
+@property (strong, nonatomic) UIView *searchView;
 
 @end
 
@@ -42,6 +42,9 @@
 //    self.tableView.delegate = self;
     //[self loadCards];
     self.allCards = [NSMutableArray array];
+    if ([self.appDelegate.remoteDevices count] == 0) {
+        [self addSearchingView];
+    }
 
 }
 
@@ -59,6 +62,25 @@
 {
     [super viewDidDisappear:animated];
     [self.appDelegate.centralManager stopScan];
+}
+
+
+- (void) addSearchingView
+{
+    self.searchView = [UIView loadFromNibWithName:@"SearchingView" ower:self];
+    [self.view addSubview:self.searchView];
+}
+
+- (void) removeSearchingView
+{
+    [UIView animateWithDuration:1.0 animations:^{
+        self.searchView.transform = CGAffineTransformScale(self.searchView.transform, 2, 2);
+        self.searchView.alpha = 0;
+    } completion:^(BOOL finished) {
+        [self.searchView removeFromSuperview];
+        self.searchView = nil;
+    }];
+    
 }
 
 - (void) loadCards
@@ -104,6 +126,9 @@
 {
     [super viewDidLayoutSubviews];
     [self.view bringSubviewToFront:self.swipeViewContainer];
+    if (self.searchView) {
+        [self.view bringSubviewToFront:self.searchView];
+    }
 }
 
 - (DraggableView*) createCardAtIndex:(NSInteger) index;
@@ -235,6 +260,9 @@
     NSLog(@"discover peripheral %@", devcie.localName);
     // 更新卡片
     [self addCard];
+    if (self.searchView) {
+        [self removeSearchingView];
+    }
 }
 
 - (void) centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
@@ -383,11 +411,13 @@
     [self.allCards removeObject:card];
     //[self addCard];
     if ([self.allCards count] == 0) {
-        [self loadCards];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self loadCards];
+        });
     }
     
     RemoteDevice* device = self.appDelegate.remoteDevices[dragView.tag];
-    NSLog(@"unlike device name %@, tag %d", device.localName, dragView.tag);
+    NSLog(@"unlike device name %@, tag %ld", device.localName, dragView.tag);
 }
 -(void)cardSwipedRight:(UIView *)card
 {
@@ -395,12 +425,14 @@
     [self.allCards removeObject:card];
     //[self addCard];
     if ([self.allCards count] == 0) {
-        [self loadCards];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self loadCards];
+        });
     }
     
     // 假设对方也喜欢
     RemoteDevice* device = self.appDelegate.remoteDevices[dragView.tag];
-    NSLog(@"like device name %@ tag %d", device.localName, dragView.tag);
+    NSLog(@"like device name %@ tag %ld", device.localName, dragView.tag);
     self.appDelegate.currentDevice = device;
     self.appDelegate.userRole = CentralRole;
     [self performSegueWithIdentifier:@"ShowWaitingSegue" sender:self];

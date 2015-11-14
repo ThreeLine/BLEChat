@@ -27,6 +27,7 @@
     [super viewDidLoad];
     if (self.appDelegate.userRole == CentralRole) {
         self.yesButton.hidden = YES;
+        self.timerLabel.hidden = YES;
     }
     // 60s倒计时
     self.count = 60;
@@ -35,7 +36,7 @@
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self.radarView startAnimation];
+    //[self.radarView startAnimation];
     
     if (self.appDelegate.userRole == CentralRole) {
         [self connectToUser];
@@ -189,6 +190,9 @@
     // 连接失败
     NSLog(@"connect fail!!!");
     self.appDelegate.currentDevice = nil;
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"Connect fail." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [alertView show];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - PeripheralManagerDelegate
@@ -201,6 +205,8 @@
         [request.value getBytes:data length:request.value.length];
         if (data[0] == DATE_CANCEL) {
             // 取消约会
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"Her/He cancel." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alertView show];
             [self dismissViewControllerAnimated:YES completion:nil];
         }
     }

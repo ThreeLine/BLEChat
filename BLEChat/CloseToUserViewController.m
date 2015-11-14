@@ -28,8 +28,8 @@
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self.remoteUserRadaView startAnimation];
-    [self.myReadarView startAnimation];
+    //[self.remoteUserRadaView startAnimation];
+    //[self.myReadarView startAnimation];
     
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(readRSSI:) userInfo:nil repeats:YES];
@@ -76,6 +76,7 @@
         [request.value getBytes:data length:request.value.length];
         if (data[0] == DATE_CANCEL) {
             // 取消约会
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"Her/He cancel." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [self performSegueWithIdentifier:@"ShowNearbySegue" sender:self];
         } else if(data[0] == DATE_DISTANCE) {
             [self updateDistance:data[1]];

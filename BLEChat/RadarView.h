@@ -14,6 +14,7 @@ IB_DESIGNABLE
 @property (strong, nonatomic) IBInspectable UIImage* image;
 @property (assign, nonatomic) IBInspectable CGFloat whiteViewDis;
 @property (assign, nonatomic) IBInspectable CGFloat radarWidthRatio; // 雷达比率
+@property (assign, nonatomic) IBInspectable BOOL enableRadar;
 
 - (void) startAnimation;
 

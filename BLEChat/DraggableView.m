@@ -74,7 +74,8 @@
         overlayView.alpha = 0;
         [self addSubview:overlayView];
         overlayView.translatesAutoresizingMaskIntoConstraints = NO;
-        [overlayView centerInSuperView];
+        [overlayView layoutMarginTopSuperView:50];
+        [overlayView centerXInSuperView];
 
     }
     return self;

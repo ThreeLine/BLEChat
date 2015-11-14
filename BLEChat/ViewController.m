@@ -57,6 +57,11 @@
     return pow(10, power);
 }
 
+- (BOOL) prefersStatusBarHidden
+{
+    return YES;
+}
+
 
 #pragma mark - PeripheralManagerDelegate
 
