@@ -14,6 +14,11 @@
 		187B76FC1BF7247A005254A8 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187B76FB1BF7247A005254A8 /* Storyboard.storyboard */; };
 		187B77001BF727F7005254A8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187B76FF1BF727F7005254A8 /* LoginViewController.m */; };
 		187B77031BF728B6005254A8 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 187B77021BF728B6005254A8 /* LoginView.m */; };
+		187B77051BF76579005254A8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187B77041BF76579005254A8 /* CoreGraphics.framework */; };
+		187B77071BF765A0005254A8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187B77061BF765A0005254A8 /* QuartzCore.framework */; };
+		187B77091BF765AA005254A8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187B77081BF765AA005254A8 /* MobileCoreServices.framework */; };
+		187B770F1BF777F9005254A8 /* PickerDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 187B770C1BF777F9005254A8 /* PickerDialog.m */; };
+		187B77101BF777F9005254A8 /* PickerDialogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187B770E1BF777F9005254A8 /* PickerDialogController.m */; };
 		778BAE87E957B3548C5B7EE9 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81F199130BDA0DC14D83E22 /* Pods.framework */; };
 		A54AB3501BF6DE53000E6840 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A54AB34F1BF6DE53000E6840 /* main.m */; };
 		A54AB3531BF6DE53000E6840 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A54AB3521BF6DE53000E6840 /* AppDelegate.m */; };
@@ -59,6 +64,13 @@
 		187B76FF1BF727F7005254A8 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		187B77011BF728B6005254A8 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
 		187B77021BF728B6005254A8 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		187B77041BF76579005254A8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		187B77061BF765A0005254A8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		187B77081BF765AA005254A8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		187B770B1BF777F9005254A8 /* PickerDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerDialog.h; sourceTree = "<group>"; };
+		187B770C1BF777F9005254A8 /* PickerDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerDialog.m; sourceTree = "<group>"; };
+		187B770D1BF777F9005254A8 /* PickerDialogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerDialogController.h; sourceTree = "<group>"; };
+		187B770E1BF777F9005254A8 /* PickerDialogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerDialogController.m; sourceTree = "<group>"; };
 		A54AB34B1BF6DE53000E6840 /* BLEChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLEChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54AB34F1BF6DE53000E6840 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A54AB3511BF6DE53000E6840 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -88,6 +100,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187B77091BF765AA005254A8 /* MobileCoreServices.framework in Frameworks */,
+				187B77071BF765A0005254A8 /* QuartzCore.framework in Frameworks */,
+				187B77051BF76579005254A8 /* CoreGraphics.framework in Frameworks */,
 				778BAE87E957B3548C5B7EE9 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,9 +164,23 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		187B770A1BF777E1005254A8 /* PickerDialog */ = {
+			isa = PBXGroup;
+			children = (
+				187B770B1BF777F9005254A8 /* PickerDialog.h */,
+				187B770C1BF777F9005254A8 /* PickerDialog.m */,
+				187B770D1BF777F9005254A8 /* PickerDialogController.h */,
+				187B770E1BF777F9005254A8 /* PickerDialogController.m */,
+			);
+			name = PickerDialog;
+			sourceTree = "<group>";
+		};
 		6A68426C5F5BE69883C101F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				187B77081BF765AA005254A8 /* MobileCoreServices.framework */,
+				187B77061BF765A0005254A8 /* QuartzCore.framework */,
+				187B77041BF76579005254A8 /* CoreGraphics.framework */,
 				D81F199130BDA0DC14D83E22 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -191,6 +220,7 @@
 		A54AB34D1BF6DE53000E6840 /* BLEChat */ = {
 			isa = PBXGroup;
 			children = (
+				187B770A1BF777E1005254A8 /* PickerDialog */,
 				187B76FD1BF724B1005254A8 /* Login */,
 				187B76F91BF7091A005254A8 /* NetWork */,
 				187B76EC1BF7022D005254A8 /* Helper */,
@@ -440,9 +470,11 @@
 				187B76F51BF70481005254A8 /* Globals.m in Sources */,
 				A54AB3561BF6DE53000E6840 /* ViewController.m in Sources */,
 				187B76F21BF702E0005254A8 /* User.m in Sources */,
+				187B770F1BF777F9005254A8 /* PickerDialog.m in Sources */,
 				A54AB3831BF6DF99000E6840 /* NearbyViewController.m in Sources */,
 				187B77001BF727F7005254A8 /* LoginViewController.m in Sources */,
 				187B77031BF728B6005254A8 /* LoginView.m in Sources */,
+				187B77101BF777F9005254A8 /* PickerDialogController.m in Sources */,
 				A54AB3531BF6DE53000E6840 /* AppDelegate.m in Sources */,
 				A54AB38B1BF6E0C0000E6840 /* PeripheralManager.m in Sources */,
 				A54AB3501BF6DE53000E6840 /* main.m in Sources */,

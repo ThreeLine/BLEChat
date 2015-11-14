@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "LoginView.h"
-@interface LoginViewController : UIViewController<LoginViewDelegate>
+#import "NetWork.h"
+@interface LoginViewController : UIViewController<LoginViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,NetWorkDelegate,UIPickerViewDataSource,UIPickerViewDelegate>
+@property (strong, nonatomic) UIPickerView* modePickerView;
 
 @end

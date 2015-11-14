@@ -14,4 +14,6 @@
 @synthesize age;
 @synthesize image;
 @synthesize userId;
+@synthesize status;
+@synthesize uiimage;
 @end

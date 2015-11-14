@@ -10,8 +10,10 @@
 #import <UIKit/UIKit.h>
 @interface User : NSObject
 @property(nonatomic) NSString* name;
-@property(nonatomic) BOOL sex;//0为男1为女
-@property(nonatomic) UIImage* image;
+@property(nonatomic) BOOL sex;//0为女1为男
+@property(nonatomic) BOOL status;//0为busy1为ready
+@property(nonatomic) NSString* image;
 @property(nonatomic) NSInteger age;
 @property(nonatomic) NSString* userId;
+@property(nonatomic) UIImage* uiimage;
 @end

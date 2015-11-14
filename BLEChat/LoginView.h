@@ -11,7 +11,13 @@
 @protocol LoginViewDelegate <NSObject>
 @optional
 -(void) sureTouch;
+-(void) photoTouch;
+-(void) sexTouch;
 @end
-@interface LoginView : UIView
+@interface LoginView : UIView<UITextFieldDelegate>
 @property (strong, nonatomic) id<LoginViewDelegate> delegate;
+@property(strong) UIImageView* photo;
+@property(strong,nonatomic) UITextField* nameField;
+@property(strong,nonatomic) UITextField* ageField;
+@property(strong) UIButton* sexButton;
 @end

@@ -15,6 +15,8 @@
 -(void) isFindedUserFromId:(User*) user;
 -(void) isLogined;
 -(void) isregistered:(User*) user;
+-(void) isChangedStatu;
+-(void) isLiked:(BOOL) isSuc;
 @end
 @interface NetWork : NSObject
 @property(nonatomic,strong)AFHTTPRequestOperationManager *manager;
@@ -24,7 +26,18 @@
 
 -(void) login:(User*) user;
 
--(void) findUserFromId:(NSInteger) userid;//通过id查找用户
+-(void) findUserFromId:(NSString*) userid;//通过id查找用户
 
 -(void) get;
+
+-(void) postImage:(UIImage*) image;
+
+-(void) changeStateToBusy:(NSString*) userId;
+
+-(void) changeStateToReady:(NSString*) userId;;
+
+-(void) getImageURLFromPath:(User*) user;
+
+-(void) sendToLike:(NSString*) otherId;
+
 @end
