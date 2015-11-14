@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		187B76EF1BF70255005254A8 /* DBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 187B76EE1BF70255005254A8 /* DBHelper.m */; };
+		187B76F21BF702E0005254A8 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 187B76F11BF702E0005254A8 /* User.m */; };
+		187B76F51BF70481005254A8 /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 187B76F41BF70481005254A8 /* Globals.m */; };
+		187B76F81BF70908005254A8 /* NetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 187B76F71BF70908005254A8 /* NetWork.m */; };
+		187B76FC1BF7247A005254A8 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187B76FB1BF7247A005254A8 /* Storyboard.storyboard */; };
+		187B77001BF727F7005254A8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187B76FF1BF727F7005254A8 /* LoginViewController.m */; };
+		187B77031BF728B6005254A8 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 187B77021BF728B6005254A8 /* LoginView.m */; };
 		778BAE87E957B3548C5B7EE9 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81F199130BDA0DC14D83E22 /* Pods.framework */; };
 		A54AB3501BF6DE53000E6840 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A54AB34F1BF6DE53000E6840 /* main.m */; };
 		A54AB3531BF6DE53000E6840 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A54AB3521BF6DE53000E6840 /* AppDelegate.m */; };
@@ -39,6 +46,19 @@
 
 /* Begin PBXFileReference section */
 		130FAF6E80A54B411D4B45FC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		187B76ED1BF70255005254A8 /* DBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBHelper.h; sourceTree = "<group>"; };
+		187B76EE1BF70255005254A8 /* DBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBHelper.m; sourceTree = "<group>"; };
+		187B76F01BF702E0005254A8 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		187B76F11BF702E0005254A8 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		187B76F31BF70481005254A8 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
+		187B76F41BF70481005254A8 /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
+		187B76F61BF70908005254A8 /* NetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWork.h; sourceTree = "<group>"; };
+		187B76F71BF70908005254A8 /* NetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWork.m; sourceTree = "<group>"; };
+		187B76FB1BF7247A005254A8 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		187B76FE1BF727F7005254A8 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		187B76FF1BF727F7005254A8 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		187B77011BF728B6005254A8 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		187B77021BF728B6005254A8 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
 		A54AB34B1BF6DE53000E6840 /* BLEChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLEChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54AB34F1BF6DE53000E6840 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A54AB3511BF6DE53000E6840 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -89,6 +109,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		187B76EB1BF70195005254A8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				187B76F01BF702E0005254A8 /* User.h */,
+				187B76F11BF702E0005254A8 /* User.m */,
+				187B76F31BF70481005254A8 /* Globals.h */,
+				187B76F41BF70481005254A8 /* Globals.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		187B76EC1BF7022D005254A8 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				187B76ED1BF70255005254A8 /* DBHelper.h */,
+				187B76EE1BF70255005254A8 /* DBHelper.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		187B76F91BF7091A005254A8 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				187B76F61BF70908005254A8 /* NetWork.h */,
+				187B76F71BF70908005254A8 /* NetWork.m */,
+			);
+			name = NetWork;
+			sourceTree = "<group>";
+		};
+		187B76FD1BF724B1005254A8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				187B76FE1BF727F7005254A8 /* LoginViewController.h */,
+				187B76FF1BF727F7005254A8 /* LoginViewController.m */,
+				187B77011BF728B6005254A8 /* LoginView.h */,
+				187B77021BF728B6005254A8 /* LoginView.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		6A68426C5F5BE69883C101F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +191,10 @@
 		A54AB34D1BF6DE53000E6840 /* BLEChat */ = {
 			isa = PBXGroup;
 			children = (
+				187B76FD1BF724B1005254A8 /* Login */,
+				187B76F91BF7091A005254A8 /* NetWork */,
+				187B76EC1BF7022D005254A8 /* Helper */,
+				187B76EB1BF70195005254A8 /* Models */,
 				A54AB3851BF6DFCA000E6840 /* PeripheralManager */,
 				A54AB3841BF6DF9D000E6840 /* NearBy */,
 				A54AB3511BF6DE53000E6840 /* AppDelegate.h */,
@@ -142,6 +206,7 @@
 				A54AB35C1BF6DE53000E6840 /* LaunchScreen.storyboard */,
 				A54AB35F1BF6DE53000E6840 /* Info.plist */,
 				A54AB34E1BF6DE53000E6840 /* Supporting Files */,
+				187B76FB1BF7247A005254A8 /* Storyboard.storyboard */,
 			);
 			path = BLEChat;
 			sourceTree = "<group>";
@@ -297,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A54AB35E1BF6DE53000E6840 /* LaunchScreen.storyboard in Resources */,
+				187B76FC1BF7247A005254A8 /* Storyboard.storyboard in Resources */,
 				A54AB35B1BF6DE53000E6840 /* Assets.xcassets in Resources */,
 				A54AB3591BF6DE53000E6840 /* Main.storyboard in Resources */,
 			);
@@ -371,11 +437,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187B76F51BF70481005254A8 /* Globals.m in Sources */,
 				A54AB3561BF6DE53000E6840 /* ViewController.m in Sources */,
+				187B76F21BF702E0005254A8 /* User.m in Sources */,
 				A54AB3831BF6DF99000E6840 /* NearbyViewController.m in Sources */,
+				187B77001BF727F7005254A8 /* LoginViewController.m in Sources */,
+				187B77031BF728B6005254A8 /* LoginView.m in Sources */,
 				A54AB3531BF6DE53000E6840 /* AppDelegate.m in Sources */,
 				A54AB38B1BF6E0C0000E6840 /* PeripheralManager.m in Sources */,
 				A54AB3501BF6DE53000E6840 /* main.m in Sources */,
+				187B76F81BF70908005254A8 /* NetWork.m in Sources */,
+				187B76EF1BF70255005254A8 /* DBHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
