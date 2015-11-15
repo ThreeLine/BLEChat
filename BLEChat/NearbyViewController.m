@@ -71,7 +71,7 @@
     self.searchView = [UIView loadFromNibWithName:@"SearchingView" ower:self];
     self.searchView.frame = [UIScreen mainScreen].bounds;
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", IMAGE_URL,[Globals shareInstance].mainUser.image]];
-    [self.searchView.radarView.imageView setImageWithURL:url];
+    self.searchView.radarView.image = [Globals shareInstance].mainUser.uiimage;
     [self.view addSubview:self.searchView];
 }
 
