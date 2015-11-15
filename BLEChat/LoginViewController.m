@@ -91,6 +91,12 @@
 }
 
 -(void) sureTouch{
+    if (self.isRegisted) {
+        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"" message:@"Already regist,upload you photo please." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        [alter show];
+        return;
+    }
     self.preUser.name = self.loginview.nameField.text;
     self.preUser.age = [self.loginview.ageField.text intValue];
     NetWork* work = [[NetWork alloc] init];
