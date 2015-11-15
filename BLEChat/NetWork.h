@@ -17,7 +17,7 @@
 -(void) isLogined;
 -(void) isregistered:(User*) user;
 -(void) isChangedStatu;
--(void) isLiked:(BOOL) isSuc;
+-(void) isLiked:(BOOL) isSuc :(NSString*)otherId;
 @end
 @interface NetWork : NSObject
 @property(nonatomic,strong)AFHTTPRequestOperationManager *manager;

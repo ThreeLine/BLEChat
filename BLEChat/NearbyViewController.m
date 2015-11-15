@@ -472,7 +472,7 @@
 {
     
 }
--(void) isLiked:(BOOL) isSuc
+-(void) isLiked:(BOOL) isSuc :(NSString*)otherId
 {
     
 }
