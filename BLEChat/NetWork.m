@@ -189,7 +189,7 @@
 }
 
 -(void) postUpdateUserInfo{
-    NSDictionary* dic = @{@"path":self.globals.mainUser.image};
+    NSDictionary* dic = @{@"imagePath":self.globals.mainUser.image};
     NSString* url_path = [NSString stringWithFormat:@"http://chat.3fnx.com/chat/open/person/%@.json",self.globals.mainUser.userId];
     [self.manager PUT:url_path parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSLog(@"suc%@",responseObject);
