@@ -67,4 +67,14 @@
     return _searchedUsers;
 }
 
+- (RemoteDevice*) findRemoteDeviceByUserId:(NSString*) userId
+{
+    for (RemoteDevice *remoteDevice in self.remoteDevices) {
+        if ([remoteDevice.localName isEqualToString:userId]) {
+            return remoteDevice;
+        }
+    }
+    return nil;
+}
+
 @end

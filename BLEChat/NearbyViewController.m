@@ -99,7 +99,7 @@
 - (void) addCard
 {
     //return;
-    NSLog(@"addCard");
+    NSLog(@"addCard users size %ld", [self.appDelegate.searchedUsers count]);
     User *user = [self.appDelegate.searchedUsers objectAtIndex:self.lastCardIndex];
     
     DraggableView *card = [[DraggableView alloc] init];
@@ -120,7 +120,7 @@
     [card layoutMatchSuperView];
     [self.allCards addObject:card];
     
-    self.lastCardIndex = (self.lastCardIndex+1) % [self.appDelegate.remoteDevices count];
+    self.lastCardIndex = (self.lastCardIndex+1) % [self.appDelegate.searchedUsers count];
 }
 
 - (void) viewDidLayoutSubviews
@@ -391,9 +391,11 @@
             [self loadCards];
         });
     }
-    
-    RemoteDevice* device = self.appDelegate.remoteDevices[dragView.tag];
-    NSLog(@"unlike device name %@, tag %ld", device.localName, dragView.tag);
+    User* user = self.appDelegate.searchedUsers[dragView.tag];
+    NSLog(@"like user id %@", user.userId);
+
+//    RemoteDevice* device = self.appDelegate.remoteDevices[dragView.tag];
+//    NSLog(@"unlike device name %@, tag %ld", device.localName, dragView.tag);
 }
 -(void)cardSwipedRight:(UIView *)card
 {
@@ -407,11 +409,13 @@
     }
     
     // 假设对方也喜欢
-    RemoteDevice* device = self.appDelegate.remoteDevices[dragView.tag];
-    NSLog(@"like device name %@ tag %ld", device.localName, dragView.tag);
-    self.appDelegate.currentDevice = device;
-    self.appDelegate.userRole = CentralRole;
-    [self performSegueWithIdentifier:@"ShowWaitingSegue" sender:self];
+    User* user = self.appDelegate.searchedUsers[dragView.tag];
+    NSLog(@"like user id %@", user.userId);
+    [self.network sendToLike:user.userId];
+    
+//    RemoteDevice* device = self.appDelegate.remoteDevices[dragView.tag];
+//    NSLog(@"like device name %@ tag %ld", device.localName, dragView.tag);
+    
 }
 #pragma mark - Events
 - (IBAction)onUnlikeClicked:(id)sender
@@ -474,7 +478,13 @@
 }
 -(void) isLiked:(BOOL) isSuc
 {
-    
+    if (isSuc) {
+        // other like
+//        self.appDelegate.currentDevice = device;
+//        self.appDelegate.userRole = CentralRole;
+//        [self performSegueWithIdentifier:@"ShowWaitingSegue" sender:self];
+
+    }
 }
 
 @end

@@ -27,6 +27,7 @@ typedef NS_ENUM(NSInteger, UserRole)
 @property (strong, nonatomic) NSMutableArray* remoteDevices;
 @property (strong, nonatomic) NSMutableArray* searchedUsers; // 搜索到的用户
 
+- (RemoteDevice*) findRemoteDeviceByUserId:(NSString*) userId;
 
 @end
 
