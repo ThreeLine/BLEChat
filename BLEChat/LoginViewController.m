@@ -80,6 +80,7 @@
         
         self.loginview.nameField.text = name;
         self.loginview.ageField.text = age;
+        self.isRegisted = YES;
     }
     
 }
