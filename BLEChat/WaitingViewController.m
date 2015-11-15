@@ -114,7 +114,7 @@
 //    for (int i = 0; i < 10; i++) {
 //        name[i] = 'f';
 //    }
-    NSData* value = [NSData dataWithBytes:name length:10];
+    NSData* value = [NSData dataWithBytes:name length:userId.length];
     
     // 询问是否接受邀请
     [self.appDelegate.currentDevice sendMessage:RemoteDeviceMsgTypeWillDating data:value];
