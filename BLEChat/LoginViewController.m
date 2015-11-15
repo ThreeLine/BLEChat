@@ -81,6 +81,7 @@
         self.loginview.nameField.text = name;
         self.loginview.ageField.text = age;
         self.isRegisted = YES;
+        self.preUser = user;
     }
     
 }
@@ -196,6 +197,7 @@
                                                                          [self onSelectedMode];
                                                                      } customView:self.modePickerView];
     [vc show];
+    [self.modePickerView selectRow:self.preUser.sex inComponent:0 animated:NO];
 }
 
 - (void) onSelectedMode
