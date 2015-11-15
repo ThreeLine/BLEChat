@@ -30,7 +30,11 @@
     [super viewDidAppear:animated];
     //[self.remoteUserRadaView startAnimation];
     //[self.myReadarView startAnimation];
-    
+    // 显示对方的图片
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", IMAGE_URL,[Globals shareInstance].other.image]];
+    [self.remoteUserRadaView.imageView setImageWithURL:url];
+    url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", IMAGE_URL,[Globals shareInstance].mainUser.image]];
+    [self.myReadarView.imageView setImage:url];
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(readRSSI:) userInfo:nil repeats:YES];
 }

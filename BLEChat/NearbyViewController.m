@@ -12,6 +12,7 @@
 #import "DraggableView.h"
 #import "ECExtension.h"
 #import "WaitingViewController.h"
+#import "SearchingView.h"
 
 #define ALERT_VIEW_TAG_ASK_WILL_DATE 1000 // 是否约会对话框
 #define ALERT_VIEW_WAITING 1001 // 等待对话框
@@ -25,7 +26,7 @@
 
 @property (strong, nonatomic) NSMutableArray* allCards;
 @property (assign, nonatomic) NSInteger lastCardIndex; // 最后卡片的位置
-@property (strong, nonatomic) UIView *searchView;
+@property (strong, nonatomic) SearchingView *searchView;
 @property (strong, nonatomic) NetWork *network;
 
 @end
@@ -69,6 +70,8 @@
 {
     self.searchView = [UIView loadFromNibWithName:@"SearchingView" ower:self];
     self.searchView.frame = [UIScreen mainScreen].bounds;
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", IMAGE_URL,[Globals shareInstance].mainUser.image]];
+    [self.searchView.radarView.imageView setImageWithURL:url];
     [self.view addSubview:self.searchView];
 }
 
@@ -355,12 +358,19 @@
     for (CBATTRequest* request in requests) {
         uint8_t data[request.value.length];
         [request.value getBytes:data length:request.value.length];
+        NSLog(@"Receive data: ");
+        for (int i = 0; i < request.value.length; i++) {
+            NSLog(@"%c", data[i]);
+        }
         if (data[0] == WILL_DATE) {
             // 询问是否约会
+            char nameCharas[request.value.length];
             NSMutableString *otherId = [[NSMutableString alloc] init];
             for (int i = 1; i<request.value.length; i++) {
-                [otherId appendString:[NSString stringWithUTF8String:data[i]]];
+                nameCharas[i-1] = data[i];
             }
+            nameCharas[request.value.length-1] = '\0';
+            otherId = [NSString stringWithUTF8String:nameCharas];
             NSLog(@"otherId %@", otherId);
             User *user = [self.appDelegate findUserByUserId:otherId];
             if (user != nil) {
