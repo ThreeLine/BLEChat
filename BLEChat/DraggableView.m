@@ -53,6 +53,7 @@
         [self.imageView layoutMarginLeftSuperView:0];
         [self.imageView layoutMarginRightSuperView:0];
         [self.imageView layoutMarginTopSuperView:0];
+        [self.imageView constraintHeight:[UIScreen mainScreen].bounds.size.width];
         
         // 用户信息
         self.userInfoLabel = [[UILabel alloc] init];
