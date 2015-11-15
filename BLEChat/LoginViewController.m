@@ -161,7 +161,7 @@
     NSData *imageData = UIImagePNGRepresentation(image);
     if(imageData == nil)
     {
-        imageData = UIImageJPEGRepresentation(image, 1.0);
+        imageData = UIImageJPEGRepresentation(image, 0.5);
     }
     
     NSDate *date = [NSDate date];
