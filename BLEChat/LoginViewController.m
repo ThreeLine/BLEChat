@@ -178,6 +178,7 @@
     NetWork* work = [[NetWork alloc] init];
     work.delegate = self;
     [work postImage:image];
+    self.globals.mainUser.uiimage = image;
 }
 
 -(NSURL*)applicationDocumentsDirectory
