@@ -81,6 +81,7 @@
         self.loginview.nameField.text = name;
         self.loginview.ageField.text = age;
         self.isRegisted = YES;
+        self.preUser = user;
     }
     
 }
@@ -91,6 +92,12 @@
 }
 
 -(void) sureTouch{
+    if (self.isRegisted) {
+        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"" message:@"Already regist,upload you photo please." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        [alter show];
+        return;
+    }
     self.preUser.name = self.loginview.nameField.text;
     self.preUser.age = [self.loginview.ageField.text intValue];
     NetWork* work = [[NetWork alloc] init];
@@ -190,6 +197,7 @@
                                                                          [self onSelectedMode];
                                                                      } customView:self.modePickerView];
     [vc show];
+    [self.modePickerView selectRow:self.preUser.sex inComponent:0 animated:NO];
 }
 
 - (void) onSelectedMode
