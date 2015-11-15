@@ -40,14 +40,15 @@
     
     if (self.appDelegate.userRole == CentralRole) {
         [self connectToUser];
-        // 显示对方的图片
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", IMAGE_URL,[Globals shareInstance].other.image]];
-        [self.radarView.imageView setImageWithURL:url];
+        
         self.messageLabel.text = @"Waiting to be accept";
     } else if (self.appDelegate.userRole == PeripheralRole) {
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDown:) userInfo:nil repeats:YES];
         self.messageLabel.text = @"Close to her?";
     }
+    // 显示对方的图片
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", IMAGE_URL,[Globals shareInstance].other.image]];
+    [self.radarView.imageView setImageWithURL:url];
     
 }
 
@@ -109,7 +110,11 @@
     for (int i = 0; i < userId.length; i++) {
         name[i] = [userId characterAtIndex:i];
     }
-    NSData* value = [NSData dataWithBytes:name length:userId.length];
+//    uint8_t name[10];
+//    for (int i = 0; i < 10; i++) {
+//        name[i] = 'f';
+//    }
+    NSData* value = [NSData dataWithBytes:name length:10];
     
     // 询问是否接受邀请
     [self.appDelegate.currentDevice sendMessage:RemoteDeviceMsgTypeWillDating data:value];
