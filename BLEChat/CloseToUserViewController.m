@@ -34,7 +34,7 @@
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", IMAGE_URL,[Globals shareInstance].other.image]];
     [self.remoteUserRadaView.imageView setImageWithURL:url];
     NSURL *url2 = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", IMAGE_URL,[Globals shareInstance].mainUser.image]];
-    [self.myReadarView.imageView setImageWithURL:url2];
+    self.myReadarView.image = [Globals shareInstance].mainUser.uiimage;
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(readRSSI:) userInfo:nil repeats:YES];
 }
