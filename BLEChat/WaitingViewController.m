@@ -104,8 +104,15 @@
     // 设置监听
     [self.appDelegate.currentDevice setNotify:YES];
     
+    NSString* userId =[Globals shareInstance].mainUser.userId;
+    uint8_t name[userId.length];
+    for (int i = 0; i < userId.length; i++) {
+        name[i] = [userId characterAtIndex:i];
+    }
+    NSData* value = [NSData dataWithBytes:name length:userId.length];
+    
     // 询问是否接受邀请
-    [self.appDelegate.currentDevice sendMessage:RemoteDeviceMsgTypeWillDating data:nil];
+    [self.appDelegate.currentDevice sendMessage:RemoteDeviceMsgTypeWillDating data:value];
 }
 
 

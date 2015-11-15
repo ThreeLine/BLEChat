@@ -29,5 +29,7 @@ typedef NS_ENUM(NSInteger, UserRole)
 
 - (RemoteDevice*) findRemoteDeviceByUserId:(NSString*) userId;
 
+- (User*) findUserByUserId:(NSString*) userId;
+
 @end
 

@@ -77,4 +77,14 @@
     return nil;
 }
 
+- (User*) findUserByUserId:(NSString*) userId
+{
+    for (User* user in self.searchedUsers) {
+        if ([user.userId isEqualToString:userId]) {
+            return user;
+        }
+    }
+    return nil;
+}
+
 @end

@@ -68,6 +68,7 @@
 - (void) addSearchingView
 {
     self.searchView = [UIView loadFromNibWithName:@"SearchingView" ower:self];
+    self.searchView.frame = [UIScreen mainScreen].bounds;
     [self.view addSubview:self.searchView];
 }
 
@@ -356,6 +357,15 @@
         [request.value getBytes:data length:request.value.length];
         if (data[0] == WILL_DATE) {
             // 询问是否约会
+            NSMutableString *otherId = [[NSMutableString alloc] init];
+            for (int i = 1; i<request.value.length; i++) {
+                [otherId appendString:[NSString stringWithUTF8String:data[i]]];
+            }
+            NSLog(@"otherId %@", otherId);
+            User *user = [self.appDelegate findUserByUserId:otherId];
+            if (user != nil) {
+                [Globals shareInstance].other = user;
+            }
             [self performSegueWithIdentifier:@"ShowWaitingSegue" sender:self];
         }
     }

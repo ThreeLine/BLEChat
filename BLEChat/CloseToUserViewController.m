@@ -58,6 +58,8 @@
         [self.appDelegate.currentDevice sendMessage:RemoteDeviceMsgTypeDateCancel data:nil];
         [self.appDelegate.centralManager cancelPeripheralConnection:self.appDelegate.currentDevice.peripheral];
         self.appDelegate.currentDevice = nil;
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", IMAGE_URL,[Globals shareInstance].other.image]];
+        [self.myReadarView.imageView setImageWithURL:url];
     } else {
         uint8_t data[1];
         data[0] = DATE_CANCEL;
