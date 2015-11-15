@@ -66,6 +66,10 @@
     [self.manager GET:url_path parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSLog(@"suc%@",responseObject);
         NSDictionary* ddd = responseObject;
+        int code = [[ddd objectForKey:@"code"] intValue];
+        if (code!=0) {
+            return ;
+        }
         NSDictionary* data = [ddd objectForKey:@"data"];
         
         user.age = [[data objectForKey:@"age"] intValue];
@@ -113,7 +117,11 @@
         NSLog(@"JSON: %@", responseObject);
         
         NSDictionary* ddd = responseObject;
-        NSString* code = [ddd objectForKey:@"code"];
+        
+        int code = [[ddd objectForKey:@"code"] intValue];
+        if (code!=0) {
+            return ;
+        }
         NSDictionary* data = [ddd objectForKey:@"data"];
         
         NSString* age = [data objectForKey:@"age"];
@@ -198,6 +206,7 @@
         NSLog(@"suc%@",responseObject);
         NSDictionary* ddd = responseObject;
         NSDictionary* code = [ddd objectForKey:@"code"];
+        
         if ([code isEqual:0]) {
             self.globals.mainUser.status = NO;
         }
@@ -231,6 +240,10 @@
     [self.manager PUT:url_path parameters:dic success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSLog(@"suc%@",responseObject);
         NSDictionary* ddd = responseObject;
+        int code = [[ddd objectForKey:@"code"] intValue];
+        if (code!=0) {
+            return ;
+        }
         NSDictionary* data = [ddd objectForKey:@"data"];
         NSString* bothLike = [data objectForKey:@"bothLike"];
         [self.delegate isLiked:[bothLike intValue]];

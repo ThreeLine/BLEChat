@@ -245,6 +245,9 @@
 
 -(void) isLogined{
     NSLog(@"可以跳转了全部完成");
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController* vc = [storyboard instantiateInitialViewController];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 @end

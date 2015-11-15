@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PeripheralManager.h"
+#import "AppDelegate.h"
+#import "Globals.h"
+#import "NetWork.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<PeripheralManagerDelegate, CBPeripheralDelegate>
 
+@property (strong, nonatomic) PeripheralManager* peripheralManger;
+@property (strong, nonatomic) AppDelegate* appDelegate;
 
+- (float) getDistanceFromRSSI:(int) rssi;
 @end
 

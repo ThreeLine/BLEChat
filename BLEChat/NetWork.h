@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
 #import "User.h"
+#define IMAGE_URL @"http://resource.3fnx.com/images/DhSPH"
 @class NetWork;
 @protocol NetWorkDelegate <NSObject>
 @optional

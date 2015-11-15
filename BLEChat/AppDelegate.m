@@ -17,6 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [UIApplication sharedApplication].statusBarHidden = YES;
     return YES;
 }
 
@@ -40,6 +41,30 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (CBCentralManager*) centralManager
+{
+    if (!_centralManager) {
+        _centralManager = [[CBCentralManager alloc] initWithDelegate:nil queue:nil];
+    }
+    return _centralManager;
+}
+
+- (NSMutableArray*) remoteDevices
+{
+    if (!_remoteDevices) {
+        _remoteDevices = [NSMutableArray array];
+    }
+    return _remoteDevices;
+}
+
+- (NSMutableArray*) searchedUsers
+{
+    if (!_searchedUsers) {
+        _searchedUsers = [NSMutableArray array];
+    }
+    return _searchedUsers;
 }
 
 @end

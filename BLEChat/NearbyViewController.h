@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewController.h"
 
-@interface NearbyViewController : UIViewController
+@interface NearbyViewController : ViewController<CBCentralManagerDelegate>
 
 @end

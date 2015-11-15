@@ -30,6 +30,14 @@
 		A54AB3741BF6DE53000E6840 /* BLEChatUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A54AB3731BF6DE53000E6840 /* BLEChatUITests.m */; };
 		A54AB3831BF6DF99000E6840 /* NearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A54AB3821BF6DF99000E6840 /* NearbyViewController.m */; };
 		A54AB38B1BF6E0C0000E6840 /* PeripheralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A54AB38A1BF6E0C0000E6840 /* PeripheralManager.m */; };
+		A54AB38F1BF713FB000E6840 /* CentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A54AB38E1BF713FB000E6840 /* CentralManager.m */; };
+		A54AB3921BF718F1000E6840 /* RemoteDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = A54AB3911BF718F1000E6840 /* RemoteDevice.m */; };
+		A54AB3981BF75AC8000E6840 /* DraggableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A54AB3951BF75AC8000E6840 /* DraggableView.m */; };
+		A54AB3991BF75AC8000E6840 /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = A54AB3971BF75AC8000E6840 /* OverlayView.m */; };
+		A54AB39E1BF7688F000E6840 /* RadarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A54AB39D1BF7688F000E6840 /* RadarView.m */; };
+		A54AB3A21BF77324000E6840 /* WaitingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A54AB3A11BF77324000E6840 /* WaitingViewController.m */; };
+		A54AB3A61BF77CCD000E6840 /* CloseToUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A54AB3A51BF77CCD000E6840 /* CloseToUserViewController.m */; };
+		A54AB3A81BF7DE56000E6840 /* SearchingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A54AB3A71BF7DE56000E6840 /* SearchingView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +99,21 @@
 		A54AB3821BF6DF99000E6840 /* NearbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyViewController.m; sourceTree = "<group>"; };
 		A54AB3891BF6E0C0000E6840 /* PeripheralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeripheralManager.h; sourceTree = "<group>"; };
 		A54AB38A1BF6E0C0000E6840 /* PeripheralManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeripheralManager.m; sourceTree = "<group>"; };
+		A54AB38D1BF713FB000E6840 /* CentralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CentralManager.h; sourceTree = "<group>"; };
+		A54AB38E1BF713FB000E6840 /* CentralManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CentralManager.m; sourceTree = "<group>"; };
+		A54AB3901BF718F1000E6840 /* RemoteDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteDevice.h; sourceTree = "<group>"; };
+		A54AB3911BF718F1000E6840 /* RemoteDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteDevice.m; sourceTree = "<group>"; };
+		A54AB3941BF75AC8000E6840 /* DraggableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableView.h; sourceTree = "<group>"; };
+		A54AB3951BF75AC8000E6840 /* DraggableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableView.m; sourceTree = "<group>"; };
+		A54AB3961BF75AC8000E6840 /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayView.h; sourceTree = "<group>"; };
+		A54AB3971BF75AC8000E6840 /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayView.m; sourceTree = "<group>"; };
+		A54AB39C1BF7688F000E6840 /* RadarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarView.h; sourceTree = "<group>"; };
+		A54AB39D1BF7688F000E6840 /* RadarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarView.m; sourceTree = "<group>"; };
+		A54AB3A01BF77324000E6840 /* WaitingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitingViewController.h; sourceTree = "<group>"; };
+		A54AB3A11BF77324000E6840 /* WaitingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitingViewController.m; sourceTree = "<group>"; };
+		A54AB3A41BF77CCD000E6840 /* CloseToUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloseToUserViewController.h; sourceTree = "<group>"; };
+		A54AB3A51BF77CCD000E6840 /* CloseToUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloseToUserViewController.m; sourceTree = "<group>"; };
+		A54AB3A71BF7DE56000E6840 /* SearchingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchingView.xib; sourceTree = "<group>"; };
 		B5CA01E94855134E08622EFA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D81F199130BDA0DC14D83E22 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -220,6 +243,8 @@
 		A54AB34D1BF6DE53000E6840 /* BLEChat */ = {
 			isa = PBXGroup;
 			children = (
+				A54AB39B1BF7686A000E6840 /* UI */,
+				A54AB38C1BF713CE000E6840 /* CentralManager */,
 				187B770A1BF777E1005254A8 /* PickerDialog */,
 				187B76FD1BF724B1005254A8 /* Login */,
 				187B76F91BF7091A005254A8 /* NetWork */,
@@ -227,6 +252,8 @@
 				187B76EB1BF70195005254A8 /* Models */,
 				A54AB3851BF6DFCA000E6840 /* PeripheralManager */,
 				A54AB3841BF6DF9D000E6840 /* NearBy */,
+				A54AB39F1BF77305000E6840 /* Waiting */,
+				A54AB3A31BF77C9F000E6840 /* CloseToUser */,
 				A54AB3511BF6DE53000E6840 /* AppDelegate.h */,
 				A54AB3521BF6DE53000E6840 /* AppDelegate.m */,
 				A54AB3541BF6DE53000E6840 /* ViewController.h */,
@@ -234,6 +261,7 @@
 				A54AB3571BF6DE53000E6840 /* Main.storyboard */,
 				A54AB35A1BF6DE53000E6840 /* Assets.xcassets */,
 				A54AB35C1BF6DE53000E6840 /* LaunchScreen.storyboard */,
+				A54AB3A71BF7DE56000E6840 /* SearchingView.xib */,
 				A54AB35F1BF6DE53000E6840 /* Info.plist */,
 				A54AB34E1BF6DE53000E6840 /* Supporting Files */,
 				187B76FB1BF7247A005254A8 /* Storyboard.storyboard */,
@@ -283,6 +311,64 @@
 				A54AB38A1BF6E0C0000E6840 /* PeripheralManager.m */,
 			);
 			name = PeripheralManager;
+			sourceTree = "<group>";
+		};
+		A54AB38C1BF713CE000E6840 /* CentralManager */ = {
+			isa = PBXGroup;
+			children = (
+				A54AB38D1BF713FB000E6840 /* CentralManager.h */,
+				A54AB38E1BF713FB000E6840 /* CentralManager.m */,
+				A54AB3901BF718F1000E6840 /* RemoteDevice.h */,
+				A54AB3911BF718F1000E6840 /* RemoteDevice.m */,
+			);
+			name = CentralManager;
+			sourceTree = "<group>";
+		};
+		A54AB3931BF75A9C000E6840 /* DraggableView */ = {
+			isa = PBXGroup;
+			children = (
+				A54AB3941BF75AC8000E6840 /* DraggableView.h */,
+				A54AB3951BF75AC8000E6840 /* DraggableView.m */,
+				A54AB3961BF75AC8000E6840 /* OverlayView.h */,
+				A54AB3971BF75AC8000E6840 /* OverlayView.m */,
+			);
+			name = DraggableView;
+			sourceTree = "<group>";
+		};
+		A54AB39A1BF7684A000E6840 /* RadarView */ = {
+			isa = PBXGroup;
+			children = (
+				A54AB39C1BF7688F000E6840 /* RadarView.h */,
+				A54AB39D1BF7688F000E6840 /* RadarView.m */,
+			);
+			name = RadarView;
+			sourceTree = "<group>";
+		};
+		A54AB39B1BF7686A000E6840 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A54AB39A1BF7684A000E6840 /* RadarView */,
+				A54AB3931BF75A9C000E6840 /* DraggableView */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		A54AB39F1BF77305000E6840 /* Waiting */ = {
+			isa = PBXGroup;
+			children = (
+				A54AB3A01BF77324000E6840 /* WaitingViewController.h */,
+				A54AB3A11BF77324000E6840 /* WaitingViewController.m */,
+			);
+			name = Waiting;
+			sourceTree = "<group>";
+		};
+		A54AB3A31BF77C9F000E6840 /* CloseToUser */ = {
+			isa = PBXGroup;
+			children = (
+				A54AB3A41BF77CCD000E6840 /* CloseToUserViewController.h */,
+				A54AB3A51BF77CCD000E6840 /* CloseToUserViewController.m */,
+			);
+			name = CloseToUser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +441,11 @@
 				TargetAttributes = {
 					A54AB34A1BF6DE53000E6840 = {
 						CreatedOnToolsVersion = 7.1.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					A54AB3631BF6DE53000E6840 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -392,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A54AB35E1BF6DE53000E6840 /* LaunchScreen.storyboard in Resources */,
+				A54AB3A81BF7DE56000E6840 /* SearchingView.xib in Resources */,
 				187B76FC1BF7247A005254A8 /* Storyboard.storyboard in Resources */,
 				A54AB35B1BF6DE53000E6840 /* Assets.xcassets in Resources */,
 				A54AB3591BF6DE53000E6840 /* Main.storyboard in Resources */,
@@ -469,6 +561,7 @@
 			files = (
 				187B76F51BF70481005254A8 /* Globals.m in Sources */,
 				A54AB3561BF6DE53000E6840 /* ViewController.m in Sources */,
+				A54AB39E1BF7688F000E6840 /* RadarView.m in Sources */,
 				187B76F21BF702E0005254A8 /* User.m in Sources */,
 				187B770F1BF777F9005254A8 /* PickerDialog.m in Sources */,
 				A54AB3831BF6DF99000E6840 /* NearbyViewController.m in Sources */,
@@ -478,6 +571,12 @@
 				A54AB3531BF6DE53000E6840 /* AppDelegate.m in Sources */,
 				A54AB38B1BF6E0C0000E6840 /* PeripheralManager.m in Sources */,
 				A54AB3501BF6DE53000E6840 /* main.m in Sources */,
+				A54AB38F1BF713FB000E6840 /* CentralManager.m in Sources */,
+				A54AB3A21BF77324000E6840 /* WaitingViewController.m in Sources */,
+				A54AB3981BF75AC8000E6840 /* DraggableView.m in Sources */,
+				A54AB3A61BF77CCD000E6840 /* CloseToUserViewController.m in Sources */,
+				A54AB3991BF75AC8000E6840 /* OverlayView.m in Sources */,
+				A54AB3921BF718F1000E6840 /* RemoteDevice.m in Sources */,
 				187B76F81BF70908005254A8 /* NetWork.m in Sources */,
 				187B76EF1BF70255005254A8 /* DBHelper.m in Sources */,
 			);

@@ -14,9 +14,7 @@
 
 @interface PeripheralManager()
 @property (strong, nonatomic) CBPeripheralManager *manager;
-@property (strong, nonatomic) CBMutableService *service;
-@property (strong, nonatomic) CBMutableCharacteristic *writeCharacteristic;
-@property (strong, nonatomic) CBMutableCharacteristic *notifyCharacteristic;
+
 @property (strong, nonatomic) NSArray* servcies;
 @end
 
@@ -37,9 +35,29 @@
     if (self) {
         self.manager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil];
         self.enableAdvertising = NO;
+        self.name = @"5647520d0cf293310d57d478";
+        self.delegates = [NSMutableArray array];
     }
     
     return self;
+}
+
+- (void) addDelegate:(id<PeripheralManagerDelegate>) delegate
+{
+    if (![self.delegates containsObject:delegate]) {
+        [self.delegates addObject:delegate];
+    }
+}
+
+
+- (void) removeDelegate:(id<PeripheralManagerDelegate>) delegate
+{
+    [self.delegates removeObject:delegate];
+}
+
+- (void) sendMessage:(NSData *)value
+{
+    [self.manager updateValue:value forCharacteristic:self.notifyCharacteristic onSubscribedCentrals:nil];
 }
 
 - (void) setEnableAdvertising:(BOOL)enableAdvertising
@@ -70,6 +88,20 @@
     if (!_service) {
         _service = [[CBMutableService alloc] initWithType:[CBUUID UUIDWithString:SERVICE_UUID] primary:YES];
         
+        self.writeCharacteristic =
+        [[CBMutableCharacteristic alloc] initWithType:[CBUUID UUIDWithString:WRITE_CHARACTERISTIC_UUID]
+                                           properties:(CBCharacteristicPropertyWrite|CBCharacteristicPropertyWriteWithoutResponse)
+                                                value:nil
+                                          permissions:(CBAttributePermissionsWriteable)];
+        
+        self.notifyCharacteristic =
+        [[CBMutableCharacteristic alloc] initWithType:[CBUUID UUIDWithString:NOTIFY_CHARACTERISTIC_UUID]
+                                           properties:(CBCharacteristicPropertyNotify|CBCharacteristicPropertyRead)
+                                                value:nil
+                                          permissions:(CBAttributePermissionsReadable)];
+        
+        _service.characteristics = @[self.writeCharacteristic, self.notifyCharacteristic];
+        
     }
     
     return _service;
@@ -79,12 +111,25 @@
 
 - (void) startAdvertising
 {
-    
+    NSLog(@"startAdvertising %@", self.name);
+    for (CBMutableService* service in self.servcies) {
+        [self.manager addService:service];
+    }
 }
 
 - (void) stopAdvertising
 {
-    
+    NSLog(@"stopAdvertising %@", self.name);
+    [self.manager removeAllServices];
+    [self.manager stopAdvertising];
+}
+
+- (void) sendMessage
+{
+    uint8_t data[1];
+    data[0] = 1;
+    NSData * okMessage = [NSData dataWithBytes:data length:1];
+    [self.manager updateValue:okMessage forCharacteristic:self.notifyCharacteristic onSubscribedCentrals:nil];
 }
 
 #pragma mark CBPeripheralManager
@@ -113,6 +158,58 @@
             NSLog(@"CBPeripheralManager changed state to %d", (int)peripheral.state);
             break;
         }
+    }
+}
+
+- (void) peripheralManager:(CBPeripheralManager *)peripheral didAddService:(CBService *)service error:(NSError *)error
+{
+    NSLog(@"didAddService");
+    if (!error) {
+        NSDictionary *advertisingData = @{CBAdvertisementDataLocalNameKey : self.name, CBAdvertisementDataServiceUUIDsKey : @[service.UUID]};
+        [self.manager startAdvertising:advertisingData];
+    }
+}
+
+- (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveReadRequest:(CBATTRequest *)request
+{
+    NSLog(@"didReceiveReadRequest");
+
+}
+
+- (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveWriteRequests:(NSArray *)requests
+{
+    NSLog(@"didReceiveWriteRequests");
+    
+    NSArray *delegates = [NSArray arrayWithArray:self.delegates];
+    for (id<PeripheralManagerDelegate> delegate in delegates) {
+        [delegate peripheral:self didReceiveWriteRequests:requests];
+    }
+    
+//    for (int i = 0; i < [requests count]; i++) {
+//        CBATTRequest * request = [requests objectAtIndex:i];
+//        NSData *value = request.value;
+//        uint8_t data[value.length];
+//        [value getBytes:data length:value.length];
+//        if (data[0] == 0xff) {
+//            [self sendMessage];
+//        }
+//    }
+    
+}
+
+- (void) peripheralManager:(CBPeripheralManager *)peripheral central:(CBCentral *)central didSubscribeToCharacteristic:(CBCharacteristic *)characteristic
+{
+    NSLog(@"didSubscribeToCharacteristic");
+    for (id<PeripheralManagerDelegate> delegate in self.delegates) {
+        [delegate didSubscribe];
+    }
+}
+
+- (void) peripheralManager:(CBPeripheralManager *)peripheral central:(CBCentral *)central didUnsubscribeFromCharacteristic:(CBCharacteristic *)characteristic
+{
+    NSLog(@"didUnsubscribeFromCharacteristic");
+    for (id<PeripheralManagerDelegate> delegate in self.delegates) {
+        [delegate didUnsubscribe];
     }
 }
 
