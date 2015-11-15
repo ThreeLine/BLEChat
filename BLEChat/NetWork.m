@@ -37,6 +37,7 @@
         [serializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
         [serializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
         _manager.requestSerializer = serializer;
+        
     }
     return _manager;
 }
