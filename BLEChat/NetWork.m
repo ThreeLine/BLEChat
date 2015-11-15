@@ -246,7 +246,7 @@
         }
         NSDictionary* data = [ddd objectForKey:@"data"];
         NSString* bothLike = [data objectForKey:@"bothLike"];
-        [self.delegate isLiked:[bothLike intValue],otherId];
+        [self.delegate isLiked:[bothLike intValue] :otherId];
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         NSLog(@"ero%@",error);
     }];
