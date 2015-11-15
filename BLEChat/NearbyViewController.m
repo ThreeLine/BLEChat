@@ -16,9 +16,8 @@
 #define ALERT_VIEW_TAG_ASK_WILL_DATE 1000 // 是否约会对话框
 #define ALERT_VIEW_WAITING 1001 // 等待对话框
 
-@interface NearbyViewController ()<UIAlertViewDelegate, UITableViewDataSource, UITableViewDelegate, DraggableViewDelegate>
+@interface NearbyViewController ()<UIAlertViewDelegate, DraggableViewDelegate, NetWorkDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray* remoteDevices;
 @property (assign,nonatomic) NSInteger discoverServiceCount;
 @property (strong, nonatomic) UIAlertView *waitingAlertView;
@@ -27,6 +26,7 @@
 @property (strong, nonatomic) NSMutableArray* allCards;
 @property (assign, nonatomic) NSInteger lastCardIndex; // 最后卡片的位置
 @property (strong, nonatomic) UIView *searchView;
+@property (strong, nonatomic) NetWork *network;
 
 @end
 
@@ -35,11 +35,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.appDelegate.remoteDevices = [NSMutableArray array];
-    
+    self.peripheralManger.name = [Globals shareInstance].mainUser.userId;
     self.peripheralManger.enableAdvertising = YES;
     self.appDelegate.centralManager.delegate = self;
-//    self.tableView.dataSource = self;
-//    self.tableView.delegate = self;
+    self.network = [[NetWork alloc] init];
+    self.network.delegate = self;
     //[self loadCards];
     self.allCards = [NSMutableArray array];
     if ([self.appDelegate.remoteDevices count] == 0) {
@@ -87,7 +87,7 @@
 {
     [self.allCards removeAllObjects];
     [self.swipeViewContainer.subviews makeObjectsPerformSelector:@selector(removeFromSuperview )];
-    for (int i = 0; i < [self.appDelegate.remoteDevices count]; i++) {
+    for (int i = 0; i < [self.appDelegate.searchedUsers count]; i++) {
         [self addCard];
     }
 //    
@@ -100,12 +100,13 @@
 {
     //return;
     NSLog(@"addCard");
-    RemoteDevice* device = [self.appDelegate.remoteDevices objectAtIndex:self.lastCardIndex];
+    User *user = [self.appDelegate.searchedUsers objectAtIndex:self.lastCardIndex];
     
     DraggableView *card = [[DraggableView alloc] init];
     card.tag = self.lastCardIndex;
     card.delegate = self;
-    card.userInfoLabel.text = device.localName;
+    card.userInfoLabel.text = [NSString stringWithFormat:@"%@,%ld", user.name, user.age];
+    [card.imageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", IMAGE_URL, user.image]]];
     DraggableView* lastView = nil;
     if ([self.allCards count] > 0) {
         lastView = [self.allCards lastObject];
@@ -259,10 +260,11 @@
     [self.appDelegate.remoteDevices addObject:devcie];
     NSLog(@"discover peripheral %@", devcie.localName);
     // 更新卡片
-    [self addCard];
-    if (self.searchView) {
-        [self removeSearchingView];
-    }
+//    [self addCard];
+//    if (self.searchView) {
+//        [self removeSearchingView];
+//    }
+    [self.network findUserFromId:devcie.localName];
 }
 
 - (void) centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
@@ -377,32 +379,6 @@
     
 }
 
-#pragma mark - UITableViewDataSource
-- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [self.appDelegate.remoteDevices count];
-}
-
-- (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Device" forIndexPath:indexPath];
-    RemoteDevice *device = self.appDelegate.remoteDevices[indexPath.row];
-    cell.textLabel.text = device.localName;
-    
-    return cell;
-}
-
-#pragma mark - UITableViewDelegate
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    RemoteDevice *device = self.appDelegate.remoteDevices[indexPath.row];
-    [self.appDelegate.centralManager connectPeripheral:device.peripheral options:nil];
-    self.appDelegate.currentDevice = device;
-}
 
 #pragma mark - DraggableViewDelegate
 -(void)cardSwipedLeft:(UIView *)card
@@ -470,6 +446,35 @@
     if ([segue.identifier isEqualToString:@"ShowWaitingSegue"]) {
         WaitingViewController *vc = (WaitingViewController*)segue.destinationViewController;
     }
+}
+
+#pragma mark - NetWorkDelegate
+-(void) isFindedUserFromId:(User*) user
+{
+    NSLog(@"find user %d", user.name);
+    if(![self.appDelegate.searchedUsers containsObject:user]) {
+        [self.appDelegate.searchedUsers addObject:user];
+    }
+    if (self.searchView) {
+        [self removeSearchingView];
+    }
+    [self addCard];
+}
+-(void) isLogined
+{
+    
+}
+-(void) isregistered:(User*) user
+{
+    
+}
+-(void) isChangedStatu
+{
+    
+}
+-(void) isLiked:(BOOL) isSuc
+{
+    
 }
 
 @end

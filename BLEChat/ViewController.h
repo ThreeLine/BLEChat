@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "PeripheralManager.h"
 #import "AppDelegate.h"
+#import "Globals.h"
+#import "NetWork.h"
 
 @interface ViewController : UIViewController<PeripheralManagerDelegate, CBPeripheralDelegate>
 

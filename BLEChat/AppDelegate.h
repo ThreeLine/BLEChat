@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "RemoteDevice.h"
+#import "User.h"
 
 typedef NS_ENUM(NSInteger, UserRole)
 {
@@ -24,6 +25,7 @@ typedef NS_ENUM(NSInteger, UserRole)
 @property (strong, nonatomic) RemoteDevice* currentDevice;
 @property (assign, nonatomic) UserRole userRole;
 @property (strong, nonatomic) NSMutableArray* remoteDevices;
+@property (strong, nonatomic) NSMutableArray* searchedUsers; // 搜索到的用户
 
 
 @end

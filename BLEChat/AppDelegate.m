@@ -59,4 +59,12 @@
     return _remoteDevices;
 }
 
+- (NSMutableArray*) searchedUsers
+{
+    if (!_searchedUsers) {
+        _searchedUsers = [NSMutableArray array];
+    }
+    return _searchedUsers;
+}
+
 @end

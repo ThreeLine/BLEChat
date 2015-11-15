@@ -33,6 +33,7 @@
 
 #import <UIKit/UIKit.h>
 #import "OverlayView.h"
+#import "UIImageView+AFNetworking.h"
 
 @protocol DraggableViewDelegate <NSObject>
 
