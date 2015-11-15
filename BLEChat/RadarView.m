@@ -10,7 +10,7 @@
 #import "ECExtension.h"
 
 @interface RadarView()
-@property (strong, nonatomic) UIImageView* imageView;
+
 @property (strong, nonatomic) UIView *whiteView;
 @property (strong, nonatomic) NSTimer *timer;
 @end

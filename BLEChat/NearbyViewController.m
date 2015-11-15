@@ -483,9 +483,15 @@
 {
     if (isSuc) {
         // other like
-//        self.appDelegate.currentDevice = device;
-//        self.appDelegate.userRole = CentralRole;
-//        [self performSegueWithIdentifier:@"ShowWaitingSegue" sender:self];
+        for (User* user in self.appDelegate.searchedUsers) {
+            if ([user.userId isEqualToString:otherId]) {
+                [Globals shareInstance].other = user;
+            }
+        }
+        RemoteDevice *device = [self.appDelegate findRemoteDeviceByUserId:otherId];
+        self.appDelegate.currentDevice = device;
+        self.appDelegate.userRole = CentralRole;
+        [self performSegueWithIdentifier:@"ShowWaitingSegue" sender:self];
 
     }
 }

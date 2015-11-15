@@ -40,6 +40,9 @@
     
     if (self.appDelegate.userRole == CentralRole) {
         [self connectToUser];
+        // 显示对方的图片
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", IMAGE_URL,[Globals shareInstance].other.image]];
+        [self.radarView.imageView setImageWithURL:url];
         self.messageLabel.text = @"Waiting to be accept";
     } else if (self.appDelegate.userRole == PeripheralRole) {
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDown:) userInfo:nil repeats:YES];

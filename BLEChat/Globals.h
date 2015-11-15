@@ -11,5 +11,6 @@
 @interface Globals : NSObject
 +(instancetype) shareInstance;
 @property(nonatomic,strong) User* mainUser;//主角
+@property(nonatomic, strong) User* other; // 对方
 @property(nonatomic,strong) NSMutableArray* others;//扫描到的其他用户
 @end

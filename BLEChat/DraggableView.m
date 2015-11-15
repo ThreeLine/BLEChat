@@ -47,7 +47,7 @@
 #warning placeholder stuff, replace with card-specific information }
         
         // 图片
-        self.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PeoplePlaceholder"]];
+        self.imageView = [[UIImageView alloc] init];
         [self addSubview:self.imageView];
         self.imageView.translatesAutoresizingMaskIntoConstraints = NO;
         [self.imageView layoutMarginLeftSuperView:0];
