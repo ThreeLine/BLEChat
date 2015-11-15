@@ -61,7 +61,7 @@
     textField.textColor = [UIColor whiteColor];
     [self addSubview:textField];
     textField.translatesAutoresizingMaskIntoConstraints = NO;
-    textField.font = [UIFont fontWithName:@"Arial" size:12.0f];
+    textField.font = [UIFont fontWithName:@"Arial" size:20.0f];
     self.nameField = textField;
     textField.delegate = self;
     
@@ -77,7 +77,7 @@
     textField2.textColor = [UIColor whiteColor];
     [self addSubview:textField2];
     textField2.translatesAutoresizingMaskIntoConstraints = NO;
-    textField2.font = [UIFont fontWithName:@"Arial" size:12.0f];
+    textField2.font = [UIFont fontWithName:@"Arial" size:15.0f];
     self.ageField = textField2;
     textField2.delegate = self;
     
