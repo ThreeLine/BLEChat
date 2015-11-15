@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
 #import "User.h"
-#define IMAGE_URL @"http://resource.3fnx.com/images/DhSPH"
+#define IMAGE_URL @"http://resource.3fnx.com/images/"
 @class NetWork;
 @protocol NetWorkDelegate <NSObject>
 @optional
@@ -17,7 +17,7 @@
 -(void) isLogined;
 -(void) isregistered:(User*) user;
 -(void) isChangedStatu;
--(void) isLiked:(BOOL) isSuc;
+-(void) isLiked:(BOOL) isSuc :(NSString*)otherId;
 @end
 @interface NetWork : NSObject
 @property(nonatomic,strong)AFHTTPRequestOperationManager *manager;

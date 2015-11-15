@@ -106,7 +106,9 @@
     card.tag = self.lastCardIndex;
     card.delegate = self;
     card.userInfoLabel.text = [NSString stringWithFormat:@"%@,%ld", user.name, user.age];
-    [card.imageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", IMAGE_URL, user.image]]];
+    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", IMAGE_URL, user.image]];
+    NSLog(@"image url %@", url);
+    [card.imageView setImageWithURL:url];
     DraggableView* lastView = nil;
     if ([self.allCards count] > 0) {
         lastView = [self.allCards lastObject];
@@ -254,6 +256,7 @@
     devcie = [[RemoteDevice alloc] init];
     devcie.peripheral = peripheral;
     devcie.localName = [advertisementData objectForKey:CBAdvertisementDataLocalNameKey];
+    devcie.localName = [devcie.localName stringByReplacingOccurrencesOfString:@" " withString:@"1"];
     if (!devcie.localName) {
         devcie.localName = @"Unknown";
     }
@@ -476,7 +479,7 @@
 {
     
 }
--(void) isLiked:(BOOL) isSuc
+-(void) isLiked:(BOOL) isSuc :(NSString*)otherId
 {
     if (isSuc) {
         // other like

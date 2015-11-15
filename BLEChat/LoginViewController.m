@@ -80,6 +80,7 @@
         
         self.loginview.nameField.text = name;
         self.loginview.ageField.text = age;
+        self.isRegisted = YES;
     }
     
 }
@@ -208,7 +209,7 @@
 
 }
 
--(void) isLiked:(BOOL)isSuc{
+-(void) isLiked:(BOOL) isSuc :(NSString*)otherId{
     NSLog(@"匹配成功吗%d",isSuc);
 }
 
