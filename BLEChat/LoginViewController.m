@@ -92,6 +92,12 @@
 }
 
 -(void) sureTouch{
+    if ([self.loginview.nameField.text isEqualToString:@""]) {
+        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"" message:@"Name can not be nil." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        [alter show];
+        return;
+    }
     if (self.isRegisted) {
         UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"" message:@"Already regist,upload you photo please." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         
